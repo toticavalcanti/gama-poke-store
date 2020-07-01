@@ -1,0 +1,32 @@
+@media(max-width:1200px) {
+  .cartIcon, .profileIcon {
+    left: 15vh;
+  }
+}
+
+@media(max-width:1055px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  cartIcon, .profileIcon {
+    left: 5vh;
+  }
+}
+
+@media(max-width:870px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cartIcon, .profileIcon {
+    left: 0;
+  }
+}
+
+@media(max-width:690px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .cart {
+    width: 70vh;
+  }
+}

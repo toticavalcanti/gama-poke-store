@@ -1,0 +1,47 @@
+.topBar{
+  display: flex;
+  background-color: #487bd9;
+  align-items: center;
+  width: 100%;
+}
+
+.topBar img{
+  max-width: 240px;
+  max-height: 300px;
+  padding:8px 24px 12px 24px;
+  cursor: pointer;
+}
+
+.searchBar{
+  display: flex;
+  width: 50%;
+  height: 52px;
+  margin-top:16px;
+  background-color: aliceblue;
+  border-radius: 9px;
+  align-items: center;
+}
+
+.searchIcon{
+  cursor: pointer;
+}
+
+.cartIcon, .profileIcon{
+  cursor: pointer;
+  margin-top: 4px;
+  margin-left: 12px;
+  margin-right: 16px;
+  right: 0;
+  left: 15vh;
+  position: relative;
+}
+
+.searchBar input{
+  background-color: aliceblue;
+  border: none;
+  width: 93%;
+  height: 100%;
+  margin: 0;
+  border-radius: 9px;
+  text-align: center;
+}
