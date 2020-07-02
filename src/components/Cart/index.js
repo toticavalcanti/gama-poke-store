@@ -22,7 +22,7 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop }) {
             <div className='item' key={item.id}>
               <img src={item.sprites.front_default} alt={item.name} />
               <p className='name'>{item.name}</p>
-              <p className='price'>R$ {item.order}</p>
+              <p className='price'>R$ {((item.weight + item.height + item.base_experience) / 3).toFixed(2)}</p>
             </div>
           );
         })}

@@ -31,9 +31,10 @@ function App() {
     if (isCartEnabled)
       return (<Cart cartItems={cartItems} totalPrice={priceTotal} endShop={endShop} />);
   }
+  //(currentPokemon.weight + currentPokemon.height + currentPokemon.base_experience) / 3).toFixed(2)
   function addPokemonToCart(currentPokemon) {
     setCartItems([...cartItems, currentPokemon]);
-    setPriceTotal(priceTotal + currentPokemon.order);
+    setPriceTotal((parseFloat(priceTotal) + parseFloat(((currentPokemon.weight + currentPokemon.height + currentPokemon.base_experience) / 3))).toFixed(2));
   }
   function loadCards() {
     return <CardsContainer addToCart={addPokemonToCart} searchTerm={searchTerm} />
