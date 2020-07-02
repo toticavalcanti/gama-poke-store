@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactNotification from 'react-notifications-component';
 
-import TopBar from './components/TopBar';
+import NavBar from './components/NavBar';
 import CardsContainer from './components/CardsContainer';
 import Cart from './components/Cart';
 import Modal from './components/Modal';
@@ -46,7 +46,7 @@ function App() {
   return (
     <>
       <ReactNotification />
-      <TopBar onCartClick={() => {
+      <NavBar onCartClick={() => {
         if (isCartEnabled === true)
           setIsCardEnabled(false)
         else

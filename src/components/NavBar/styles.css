@@ -1,11 +1,11 @@
-.topBar{
+.navBar{
   display: flex;
   background-color: #487bd9;
   align-items: center;
   width: 100%;
 }
 
-.topBar img{
+.navBar img{
   max-width: 240px;
   max-height: 300px;
   padding:8px 24px 12px 24px;
@@ -26,11 +26,9 @@
   cursor: pointer;
 }
 
-.cartIcon, .profileIcon{
+.profileIcon{
   cursor: pointer;
-  margin-top: 4px;
-  margin-left: 12px;
-  margin-right: 16px;
+  margin-left: 50px;;
   right: 0;
   left: 15vh;
   position: relative;

@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import './styles.css';
 import logoImg from '../../assets/poke02.png'
-import { MdAccountBox, MdShoppingCart, MdSearch } from 'react-icons/md';
+import { MdAccountBox, MdSearch } from 'react-icons/md';
 
-export default function TopBar({ onCartClick, onSearchClick }) {
+export default function NavBar({ onSearchClick }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
-    <div className='topBar'>
+    <div className='navBar'>
 
       <a href='https://pokeapi.co/' target='_blank' rel='noopener noreferrer'>
         <img src={logoImg} alt='Pokémon' />
       </a>
       <div className='searchBar'>
 
-        <input placeholder='Pesquise por nome'
+        <input placeholder='Pesquise pelo nome do pokemon'
           type='text'
           onChange={e => setSearchTerm(e.target.value)}
           onKeyDown={(e) => {
@@ -29,14 +29,13 @@ export default function TopBar({ onCartClick, onSearchClick }) {
 
       </div>
 
-      <MdShoppingCart className='cartIcon'
-        color='#FFF'
-        size={55}
-        onClick={onCartClick} />
+      
+
       <a href='https://github.com/toticavalcanti' target='_blank' rel='noopener noreferrer'>
         <MdAccountBox className='profileIcon'
           color='#FFF'
-          size={55} />
+          size={70} 
+        />
       </a>
 
     </div>

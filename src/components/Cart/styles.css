@@ -1,5 +1,5 @@
 .cart{
-  background-color: rgb(211, 233, 253);
+  background-color: #487bd9;
   position: relative;
   bottom: 0;
   right: 0;
@@ -7,12 +7,9 @@
   width: 50vh;
   margin-top: 15px;
 }
-.cart img{
-  width: 50px;
-  background-color: white ;
-  border-color: yellow;
-  border-style: solid;
-  justify-self: start;
+
+.cartIcon {
+  margin-left: 140px;
 }
 
 h1{
@@ -42,7 +39,7 @@ padding-left: 6px;
   color: aliceblue;
 }
 
-.bottomContent{
+.bottomContent {
   position: relative;
   vertical-align: bottom;
   bottom: 0;

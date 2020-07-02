@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { MdShoppingCart } from 'react-icons/md'
 import './styles.css';
 
-export default function Cart({ cartItems, totalPrice, endShop }) {
+
+export default function Cart({ onCartClick, cartItems, totalPrice, endShop }) {
   const [currentCartItems, setCartItems] = useState([]);
   useEffect(() => {
     setCartItems([...cartItems]);
@@ -9,7 +11,11 @@ export default function Cart({ cartItems, totalPrice, endShop }) {
 
   return (
     <div className='cart'>
-      <h1>Carrinho</h1>
+      <MdShoppingCart className='cartIcon'
+        color='#FFF'
+        size={60}
+        onClick={onCartClick} 
+      />
       {
         currentCartItems.map(item => {
           return (
