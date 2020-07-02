@@ -32,14 +32,7 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   return (
     <>
       <>
-      <div class="container-buttons">
-        <div class="vertical-center">
-          <div className="btn">
-            <button onClick={prevUrl}>Prev</button>
-            <button onClick={nextUrl}>Next</button>
-          </div>
-        </div>
-      </div>
+     
       </>
       <div className='container'>
         {pokemonArray
