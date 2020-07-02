@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './styles.css';
+
 import logoImg from '../../assets/poke02.png'
 import { MdAccountBox, MdSearch } from 'react-icons/md';
 
@@ -8,7 +9,7 @@ export default function NavBar({ onSearchClick }) {
 
   return (
     <div className='navBar'>
-
+      
       <a href='https://pokeapi.co/' target='_blank' rel='noopener noreferrer'>
         <img src={logoImg} alt='Pokémon' />
       </a>

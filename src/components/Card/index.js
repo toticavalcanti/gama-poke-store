@@ -23,11 +23,29 @@ export default function Card({ pokemon, addToCart }) {
 
   return (
     <div className='card'>
+      <div className="Card__img">
+        <img src={pokemonSprite} alt={currentPokemon.name} />
+      </div>
 
-      <img src={pokemonSprite} alt={currentPokemon.name} />
-      <p className='name'>{currentPokemon.name}</p>
-      <p />
-      <p className='price'>R$ {parseFloat((currentPokemon.weight + currentPokemon.height + currentPokemon.base_experience) / 3).toFixed(2)} </p>
+      <div className="Card__name">
+          {currentPokemon.name}
+      </div>
+      <div className="Card__price">
+        R$ {parseFloat((currentPokemon.weight + currentPokemon.height + currentPokemon.base_experience) / 3).toFixed(2)} 
+      </div>
+
+      {/* <div className="Card__info">
+        
+        <div className="Card__data Card__data--weight">
+          <p className="title">Weight</p>
+          <p>{currentPokemon.weight}</p>
+        </div>
+
+        <div className="Card__data Card__data--weight">
+          <p className="title">Height</p>
+          <p>{currentPokemon.height}</p>
+        </div>
+      </div> */}
       
       <button onClick={() => {
         store.addNotification({

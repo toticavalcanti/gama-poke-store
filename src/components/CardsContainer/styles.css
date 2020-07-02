@@ -11,13 +11,6 @@
   position: relative;
 }
 
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
 
 .btn {
   display: flex;
@@ -34,4 +27,24 @@
   background: #487bd9;
   color: #fff;
   font-size: 1em;
+}
+
+.Card__data .Card__data--weight {
+  margin-bottom: 300px;
+}
+
+.Card__img {
+  text-align: center;
+}
+
+.price {
+  text-align: center;
+  
+}
+
+.Card__name {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 800;
+  color: #487bd9;
 }
