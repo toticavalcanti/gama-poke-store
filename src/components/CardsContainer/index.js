@@ -7,26 +7,21 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   const [pokemonArray, setPokemonArray] = useState([]);
   const [nextUrl, setNextUrl] = useState('');
   const [prevUrl, setPrevUrl] = useState('');
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadPokemon() {
-      const response = await apiType.get('/pokemon/?limit=953');
+      const response = await apiType.get('/pokemon/');
       setNextUrl(response.next);
       setPrevUrl(response.previous);
       setPokemonArray(response.data.results);
-      setLoading(false);
     }
     loadPokemon();
-
   }, [])
 
   const next = async () => {
-    setLoading(true);
     let data = await apiType.get(nextUrl);
     setNextUrl(data.next);
     setPrevUrl(data.previous);
-    setLoading(false);
   }
 
   function addItem(currentPokemon) {
@@ -36,11 +31,14 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   
   return (
     <>
-    
       <>
-      <div className="btn">
-        <button onClick={prevUrl}>Prev</button>
-        <button onClick={nextUrl}>Next</button>
+      <div class="container-buttons">
+        <div class="vertical-center">
+          <div className="btn">
+            <button onClick={prevUrl}>Prev</button>
+            <button onClick={nextUrl}>Next</button>
+          </div>
+        </div>
       </div>
       </>
       <div className='container'>
