@@ -10,7 +10,7 @@ export default function Card({ pokemon, addToCart }) {
 
   useEffect(() => {
     async function loadPokemon() {
-      const response = await api.get(pokemon.pokemon.url);
+      const response = await api.get(pokemon.url);
       setCurrentPokemon(response.data);
 
       if (response.data.sprites.front_default != null)

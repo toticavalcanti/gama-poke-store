@@ -6,6 +6,9 @@
   margin: 20px;
   text-align: center;
 }
+.cartIcon {
+  margin-left: 10px;
+}
 
 .card img{
   max-width: 80px;
@@ -15,7 +18,8 @@
 }
 
 .card p{
-  color: slategrey;
+  color: rgb(123, 57, 126);
+  font-weight: bold;
 }
 
 .card .price{
@@ -26,7 +30,7 @@
 .card button{
   padding: 16px 50px;
   margin: 0px;
-  background-color: #487bd9;;
+  background-color: #487bd9;
   border-radius: 0 0 12px 12px;
   border: none;
   font-weight: bold;

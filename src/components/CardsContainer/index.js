@@ -8,8 +8,9 @@ export default function CardsContainer({ addToCart, searchTerm }) {
 
   useEffect(() => {
     async function loadPokemon() {
-      const response = await apiType.get('/electric');
-      setPokemonArray(response.data.pokemon);
+      const response = await apiType.get('/pokemon');
+      setPokemonArray(response.data.results);
+      
     }
     loadPokemon();
 
@@ -18,12 +19,13 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   function addItem(currentPokemon) {
     addToCart(currentPokemon)
   }
-
+  console.log(pokemonArray)
+  
   return (<div className='container'>
     {pokemonArray
-      .filter(pokemon => pokemon.pokemon.name.includes(searchTerm))
+      .filter(pokemon => pokemon.name.includes(searchTerm))
       .map(pokemon => {
-        return <Card pokemon={pokemon} addToCart={addItem} key={pokemon.pokemon.name} />
+        return <Card pokemon={pokemon} addToCart={addItem} key={pokemon.name} />
       })}
   </div>);
 
