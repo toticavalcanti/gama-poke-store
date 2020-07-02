@@ -25,7 +25,7 @@ export default function Card({ pokemon, addToCart }) {
       <img src={pokemonSprite} alt={currentPokemon.name} />
       <p className='name'>{currentPokemon.name}</p>
       <p />
-      <p className='price'>R$ {currentPokemon.order = (Math.random() * 800).toFixed(2)} </p>
+      <p className='price'>R$ {currentPokemon.order} </p>
       
       <button onClick={() => {
         store.addNotification({

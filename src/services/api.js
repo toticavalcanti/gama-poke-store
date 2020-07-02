@@ -1,9 +1,9 @@
-async function api(url) {
-    return new Promise((resolve) => {
-        fetch(url).then(res => res.json())
-            .then(data => {
-                resolve(data)
-            })
-    });
-}
+import axios from 'axios';
+
+const api = axios.create();
+export const apiType = axios.create({
+baseURL:'https://pokeapi.co/api/v2/type/',
+});
+
 export default api;
+
