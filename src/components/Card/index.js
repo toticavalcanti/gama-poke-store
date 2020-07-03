@@ -28,9 +28,9 @@ export default function PokeCard({ pokemon, addToCart }) {
   }, [pokemon])
 
   return (
-    <Container xs="8" className="gap" fluid={true}>
+    <Container fluid={true}>
       <Row>
-        <Col sm={{ size: 'auto', offset: 1 }}>   
+        <Col >   
         <Card className="mx-auto my-3">
           <img className='poke_card_image' width="50%" src={pokemonSprite} alt={currentPokemon.name} rounded  />
           <CardBody>

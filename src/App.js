@@ -27,6 +27,12 @@ function App() {
       setShowModalState(false)
     }, 2000);
   }
+
+  function clearCart() {
+    setCartItems([]);
+    setPriceTotal(0);
+  }
+
   function renderCart(cartItems, priceTotal) {
     if (isCartEnabled)
       return (<Cart cartItems={cartItems} totalPrice={priceTotal} endShop={endShop} />);

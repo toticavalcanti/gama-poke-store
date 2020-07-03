@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './styles.css';
 import PokeCard from '../Card';
 import { apiType } from '../../services/api';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default function CardsContainer({ addToCart, searchTerm }) {
   const [pokemonArray, setPokemonArray] = useState([]);
@@ -30,25 +31,13 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   console.log(pokemonArray)
   
   return (
-    <>
-      <>
-      {/* <div class="container-buttons">
-        <div class="vertical-center">
-          <div className="btn">
-            <button onClick={prevUrl}>Prev</button>
-            <button onClick={nextUrl}>Next</button>
-          </div>
-        </div>
-      </div> */}
-      </>
-      <div className='container'>
+    <Container>
         {pokemonArray
           .filter(pokemon => pokemon.name.includes(searchTerm))
           .map(pokemon => {
             return <PokeCard pokemon={pokemon} addToCart={addItem} key={pokemon.name} />
-          })}
-      </div>
-    </> 
+        })}
+    </Container>
   );
 
 };

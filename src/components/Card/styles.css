@@ -1,6 +1,6 @@
 .card {
   flex: 1;
-   border-radius: 12px 12px 12px 12px;
+  border-radius: 12px 12px 12px 12px;
 }
 
 .card_deck {
@@ -35,5 +35,5 @@
 }
 
 .card button:hover {
-  background-color: #c03792;
+  background-color: #c558a1;
 }

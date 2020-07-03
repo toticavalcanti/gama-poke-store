@@ -20,7 +20,8 @@ input{
 }
 
 body{
-  background-color: rgb(211, 233, 253);
+  overflow-x: hidden;
+  background-color: #fcf5d2;
   -webkit-font-smoothing: antialised;
 }
 

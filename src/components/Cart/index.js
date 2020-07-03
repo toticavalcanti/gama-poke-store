@@ -14,9 +14,8 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop }) {
   }, [cartItems])
 
   return (
-    <Container fluid="md">
-      <Col>
-      <div className='cart'>
+      <Container fluid className='container-right-side'>
+      
         <MdShoppingCart className='cartIcon'
           color='#FFF'
           size={60}
@@ -44,18 +43,18 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop }) {
               
             );
           })}
-
-        <div className='bottomContent'>
-
-        <h2>Total : R$ {totalPrice.toFixed(2)}</h2>
-        <Button onClick={() => {
+        <div className='total'>
+          <h2>Total : R$ {totalPrice.toFixed(2)}</h2>
+        </div>
+        <div className='bottomContent'>        
+          <Button className='button'onClick={() => {
           endShop()
         }}
         >Finalizar compra</Button>
       </div>
       
 
-      </div></Col>
-    </Container>
+      </Container>
+    
   );
 };
