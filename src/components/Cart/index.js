@@ -48,10 +48,10 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop }) {
         <div className='bottomContent'>
 
         <h2>Total : R$ {totalPrice.toFixed(2)}</h2>
-        <button onClick={() => {
+        <Button onClick={() => {
           endShop()
         }}
-        >Finalizar compra</button>
+        >Finalizar compra</Button>
       </div>
       
 

@@ -1,6 +1,6 @@
 .card {
   flex: 1;
-  border-radius: 12px 12px 12px 12px;
+   border-radius: 12px 12px 12px 12px;
 }
 
 .card_deck {
@@ -20,7 +20,6 @@
 }
 
 .card .price{
-  color: black;
   font-weight: 700;
 }
 
@@ -33,4 +32,8 @@
   font-weight: bold;
   color: white;
   cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #c03792;
 }

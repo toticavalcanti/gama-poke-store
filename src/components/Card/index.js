@@ -50,7 +50,7 @@ export default function PokeCard({ pokemon, addToCart }) {
               <p>Height: {currentPokemon.height}</p>
             </CardSubtitle>
               
-            <button onClick={() => {
+            <Button onClick={() => {
               store.addNotification({
                 title: 'Adicionado ao carrinho',
                 insert: 'bottom',
@@ -65,7 +65,7 @@ export default function PokeCard({ pokemon, addToCart }) {
               return addToCart(currentPokemon)
               }
             }
-              >Adicionar pokemon ao carrinho</button>
+              >Comprar {capitalizeLetter(currentPokemon.name)}</Button>
           </CardBody>
         </Card>
         </Col>

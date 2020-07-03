@@ -1,9 +1,9 @@
 .cart{
-  background-color: #487bd9;
+  background-color: #c03792;
   position: relative;
   bottom: 0;
   right: 0;
-  min-height: 100vh;
+  min-height: 228vh;
   width: 25vh;
   margin-top: 17px;
   border-radius: 12px 12px 12px 12px;
@@ -52,7 +52,7 @@ padding-left: 6px;
   position: relative;
   vertical-align: bottom;
   bottom: 0;
-  background-color: #487bd9;;
+  background-color: #c03792;
   margin-top: 12px;
   height: 40px;
 }
@@ -64,7 +64,7 @@ padding-left: 6px;
 }
 
 .bottomContent button{
-background-color: #487bd9;;
+background-color: #c03792;
 width: 100%;
 height: 100%;
 font-weight: 300;
@@ -72,4 +72,8 @@ font-size: 14px;
 color: white;
 border: none;
 cursor: pointer;
+}
+
+.bottomContent :hover {
+  background-color: #487bd9;
 }
