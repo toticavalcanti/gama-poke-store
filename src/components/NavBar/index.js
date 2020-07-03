@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './styles.css';
-import logoImg from '../../assets/poke02.png'
+import logoImg from '../../assets/gama-poke-store.png'
 import { MdAccountBox, MdSearch } from 'react-icons/md';
 
 export default function NavBar({ onSearchClick }) {

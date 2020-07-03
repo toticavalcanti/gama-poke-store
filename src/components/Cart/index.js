@@ -15,6 +15,7 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop }) {
 
   return (
     <Container fluid="md">
+      <Col>
       <div className='cart'>
         <MdShoppingCart className='cartIcon'
           color='#FFF'
@@ -52,8 +53,9 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop }) {
         }}
         >Finalizar compra</button>
       </div>
+      
 
-      </div>
+      </div></Col>
     </Container>
   );
 };
