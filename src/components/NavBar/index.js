@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './styles.css';
-import logoImg from '../../assets/gama-poke-store.png'
+import logoImg from '../../assets/gama-poke-store01.png'
 import { MdAccountBox, MdSearch } from 'react-icons/md';
 
 export default function NavBar({ onSearchClick }) {
@@ -10,7 +10,7 @@ export default function NavBar({ onSearchClick }) {
     <div className='navBar'>
 
       <a href='https://pokeapi.co/' target='_blank' rel='noopener noreferrer'>
-        <img src={logoImg} alt='Pokémon' />
+        <img className='logo' src={logoImg} alt='Pokémon' />
       </a>
       <div className='searchBar'>
 
