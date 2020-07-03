@@ -4,18 +4,26 @@
   bottom: 0;
   right: 0;
   min-height: 100vh;
-  width: 50vh;
+  width: 25vh;
   margin-top: 15px;
 }
 
 .cartIcon {
-  display: block;
+  margin-left: 65px;
 }
 
 h1{
   color: white;
   background-color: #487bd9;
-  text-align: center;
+}
+
+
+h2{
+  color: #487bd9;
+  font-size: medium;
+}
+.cartDetail {
+  float: left;
 }
 
 .item{
@@ -29,7 +37,7 @@ h1{
  padding-right: 12px;
 }
 
-.item .name{
+.item {
 padding-left: 6px;
 }
 
@@ -64,4 +72,3 @@ color: white;
 border: none;
 cursor: pointer;
 }
-

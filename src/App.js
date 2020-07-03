@@ -6,9 +6,9 @@ import CardsContainer from './components/CardsContainer';
 import Cart from './components/Cart';
 import Modal from './components/Modal';
 
-import 'react-notifications-component/dist/theme.css';
+import 'react-notifications-component/dist/theme.css'
 import './global.css';
-import './responsive.css';
+import './responsive.css'
 
 
 function App() {
@@ -31,7 +31,6 @@ function App() {
     if (isCartEnabled)
       return (<Cart cartItems={cartItems} totalPrice={priceTotal} endShop={endShop} />);
   }
-  //(currentPokemon.weight + currentPokemon.height + currentPokemon.base_experience) / 3).toFixed(2)
   function addPokemonToCart(currentPokemon) {
     setCartItems([...cartItems, currentPokemon]);
     setPriceTotal(priceTotal + parseFloat(((currentPokemon.weight + currentPokemon.height + currentPokemon.base_experience) / 3).toFixed(2)));

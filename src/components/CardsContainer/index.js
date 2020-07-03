@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
-import Card from '../Card';
+import PokeCard from '../Card';
 import { apiType } from '../../services/api';
 
 export default function CardsContainer({ addToCart, searchTerm }) {
@@ -32,13 +32,20 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   return (
     <>
       <>
-     
+      {/* <div class="container-buttons">
+        <div class="vertical-center">
+          <div className="btn">
+            <button onClick={prevUrl}>Prev</button>
+            <button onClick={nextUrl}>Next</button>
+          </div>
+        </div>
+      </div> */}
       </>
       <div className='container'>
         {pokemonArray
           .filter(pokemon => pokemon.name.includes(searchTerm))
           .map(pokemon => {
-            return <Card pokemon={pokemon} addToCart={addItem} key={pokemon.name} />
+            return <PokeCard pokemon={pokemon} addToCart={addItem} key={pokemon.name} />
           })}
       </div>
     </> 

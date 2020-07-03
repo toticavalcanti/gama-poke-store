@@ -29,10 +29,9 @@ export default function NavBar({ onSearchClick }) {
 
       </div>
 
-      
-
       <a href='https://github.com/toticavalcanti' target='_blank' rel='noopener noreferrer'>
-        <MdAccountBox className='profileIcon'
+        <MdAccountBox 
+          className='profileIcon'
           color='#FFF'
           size={70} 
         />

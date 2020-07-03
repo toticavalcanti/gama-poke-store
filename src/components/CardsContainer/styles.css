@@ -1,50 +1,5 @@
 .container{
   display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: min-content;
-  width: 100%;
-  margin-top: 150px;;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.container-buttons { 
-  height: 50px;
-  position: relative;
-}
-
-
-.btn {
-  display: flex;
-  justify-content: center;
-  margin: 20px 20px 20px 20px;
-}
-
-.btn button {
-  justify-content: space-between;
-  border-style: none;
-  height: 30px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background: #487bd9;
-  color: #fff;
-  font-size: 1em;
-}
-
-.Card__data .Card__data--weight {
-  margin-bottom: 300px;
-}
-
-.Card__img {
-  text-align: center;
-}
-
-.price {
-  text-align: center;
-  
-}
-
-.Card__name {
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: 800;
-  color: #487bd9;
-}
