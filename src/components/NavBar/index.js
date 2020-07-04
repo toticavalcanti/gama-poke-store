@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './styles.css';
 import logoImg from '../../assets/gama-poke-store01.png'
 import { MdAccountBox, MdSearch } from 'react-icons/md';
-import { Container, Row, Col } from 'react-bootstrap';
 
 export default function NavBar({ onSearchClick }) {
   const [searchTerm, setSearchTerm] = useState('');
