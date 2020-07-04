@@ -6,7 +6,6 @@ import { Container, Button, ButtonGroup, Row } from 'react-bootstrap';
 
 export default function CardsContainer({ addToCart, searchTerm }) {
   const [pokemonArray, setPokemonArray] = useState([]);
-  //const [loading, setLoading] = useState(false);
   const [nextUrl, setNextUrl] = useState('');
   const [prevUrl, setPrevUrl] = useState('');
   const initialURL = `/?`;
@@ -24,22 +23,18 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   }, [])
 
   const next = async () => {
-    //setLoading(true);
     let response = await apiType.get(nextUrl);
     setPokemonArray(response.data.results);
     setNextUrl(response.data.next);
     setPrevUrl(response.data.previous);
-    //setLoading(false);
   }
 
   const prev = async () => {
     if (!prevUrl) return;
-    //setLoading(true);
     let response = await apiType.get(prevUrl);
     setPokemonArray(response.data.results);
     setNextUrl(response.data.next);
     setPrevUrl(response.data.previous);
-    //setLoading(false);
   }
 
   function addItem(currentPokemon) {
@@ -48,7 +43,7 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   console.log(pokemonArray)
   
   return (
-      <>
+
       <Row>
         <ButtonGroup className='btn-group' aria-label="Basic example">
           <Button variant="secondary" className='button-prev'onClick={() => {
@@ -71,7 +66,6 @@ export default function CardsContainer({ addToCart, searchTerm }) {
           })}
         </Container>
       </Row>
-    </>
   );
 
 };
