@@ -28,6 +28,7 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   function addItem(currentPokemon) {
     addToCart(currentPokemon)
   }
+  console.log(pokemonArray)
   
   return (
       <>

@@ -28,31 +28,6 @@ export default function PokeCard({ pokemon, addToCart }) {
   }, [pokemon])
 
   return (
-<<<<<<< HEAD
-    <div className='card'>
-      <img src={pokemonSprite} alt={currentPokemon.name} />
-      <p className='name'>{currentPokemon.name}</p>
-      <p />
-      <p className='price'>R$ {currentPokemon.order} </p>
-      
-      <button onClick={() => {
-        store.addNotification({
-          title: 'Adicionado ao carrinho',
-          insert: 'bottom',
-          type: 'info',
-          message: currentPokemon.name,
-          container: 'bottom-right',
-          dismiss: {
-            duration: 1500,
-            onScreen: true
-          }
-        });
-        return addToCart(currentPokemon)
-      }
-      }
-      >Adicionar ao carrinho</button>
-    </div>
-=======
     <>
     <Container fluid={true}>
       <Row>
@@ -98,6 +73,5 @@ export default function PokeCard({ pokemon, addToCart }) {
       </Row>
     </Container>
     </>
->>>>>>> 04_nav_bootstrap
   );
 }
