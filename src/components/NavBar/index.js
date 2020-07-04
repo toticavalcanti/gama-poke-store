@@ -14,7 +14,7 @@ export default function NavBar({ onSearchClick }) {
     </a>
     <div className='searchBar'>
 
-      <input placeholder='Pesquise pelo nome do pokemon'
+      <input placeholder='Digite o nome do pokemon'
         type='text'
         onChange={e => setSearchTerm(e.target.value)}
         onKeyDown={(e) => {
