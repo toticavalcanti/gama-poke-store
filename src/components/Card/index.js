@@ -4,8 +4,8 @@ import api from '../../services/api';
 import capitalizeLetter from './../../utils/capitalize'
 import './styles.css';
 import {
-  Card, Container, Row, Col, CardGroup, CardBody,
-  CardTitle, CardSubtitle, Button
+  Card, Container, Row, Col, CardBody,
+  CardTitle, CardSubtitle, Button, Nav, ButtonGroup
 } from 'reactstrap';
 
 const unknownSprite = 'https://images.vexels.com/media/users/3/155301/isolated/preview/6a91c0d6c8ba37a9fd115e1776300319-pergunta-do-doodle-do-ponto-de-interroga----o-3d-by-vexels.png';
@@ -28,6 +28,7 @@ export default function PokeCard({ pokemon, addToCart }) {
   }, [pokemon])
 
   return (
+    <>
     <Container fluid={true}>
       <Row>
         <Col >   
@@ -71,5 +72,6 @@ export default function PokeCard({ pokemon, addToCart }) {
         </Col>
       </Row>
     </Container>
+    </>
   );
 }

@@ -3,3 +3,21 @@
   width: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.btn-group {
+  margin-left: 43%;
+  padding-top: 10px;
+}
+
+.button-prev {
+  margin-right: 6px;
+  border-radius: 12px 12px 12px 12px;
+  background-color: #487bd9;
+
+}
+
+.button-next{
+  margin-left: 6px;
+  border-radius: 12px 12px 12px 12px;
+  background-color: #487bd9;
+}

@@ -31,12 +31,22 @@ function App() {
   function clearCart() {
     setCartItems([]);
     setPriceTotal(0);
+    setShowModalState(true);
+    setTimeout(() => {
+      setShowModalState(false)
+    }, 0);
   }
 
   function renderCart(cartItems, priceTotal) {
     if (isCartEnabled)
       return (<Cart cartItems={cartItems} totalPrice={priceTotal} endShop={endShop} />);
   }
+
+  function renderClearCart(cartItems, priceTotal) {
+    if (isCartEnabled)
+      return (<Cart cartItems={cartItems} totalPrice={priceTotal} clearCart={clearCart} />);
+  }
+
   function addPokemonToCart(currentPokemon) {
     setCartItems([...cartItems, currentPokemon]);
     setPriceTotal(priceTotal + parseFloat(((currentPokemon.weight + currentPokemon.height + currentPokemon.base_experience) / 3).toFixed(2)));
@@ -65,6 +75,10 @@ function App() {
         {renderCart(cartItems, priceTotal)}
       </div>
       {showModal()}
+      <div className='content'>
+        {loadCards()}
+        {renderClearCart(cartItems, priceTotal)}
+      </div>
     </>
   );
 }

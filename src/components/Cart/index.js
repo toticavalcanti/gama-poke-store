@@ -3,11 +3,11 @@ import { MdShoppingCart } from 'react-icons/md'
 import capitalizeLetter from './../../utils/capitalize'
 import './styles.css';
 import {
-  Card, Container, Row, Col, CardGroup, CardBody,
+  Card, Container, ButtonGroup, Row, Col, CardGroup, CardBody,
   CardTitle, CardSubtitle, Button
-} from 'reactstrap';
+} from 'react-bootstrap';
 
-export default function Cart({ onCartClick, cartItems, totalPrice, endShop }) {
+export default function Cart({ onCartClick, cartItems, totalPrice, endShop, clearCart }) {
   const [currentCartItems, setCartItems] = useState([]);
   useEffect(() => {
     setCartItems([...cartItems]);
@@ -24,35 +24,37 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop }) {
         {
           currentCartItems.map(item => {
             return (
-              
-                <div className='item' key={item.id}>
-                  <Container className="line">
-                    <Row className='cartDetail'>
-                      <Col>
-                        <img src={item.sprites.front_default} alt={item.name} />
-                      </Col>
-                      <Col>
-                        <p className='name'>{capitalizeLetter(item.name)}</p>
-                      </Col>
-                      <Col>
-                        <p className='price'>R$ {((item.weight + item.height + item.base_experience) / 3).toFixed(2)}</p>
-                      </Col>
-                    </Row>
-                  </Container>
-                </div>
-              
+              <>
+              <img src={item.sprites.front_default} alt={item.name} />
+              <Container className='item' key={item.id}>
+                  <p className='name'>{capitalizeLetter(item.name)}</p>
+                  <p className='price'>R$ {((item.weight + item.height + item.base_experience) / 3).toFixed(2)}</p>
+              </Container>
+              </>
             );
           })}
         <div className='total'>
           <h2>Total : R$ {totalPrice.toFixed(2)}</h2>
         </div>
-        <div className='bottomContent'>        
-          <Button className='button'onClick={() => {
-          endShop()
-        }}
-        >Finalizar compra</Button>
-      </div>
-      
+        <Container fluid>
+          <Row>
+          <ButtonGroup className='btn-group'>
+            <Button variant="secondary" className='button-end'onClick={() => {
+              endShop()
+            }}
+            >Finalizar Compra
+            </Button>
+              
+            <Button variant="secondary" className='button-clear'onClick={() => {
+              clearCart()
+            }}
+            >Esvaziar Carrinho
+            </Button>
+          </ButtonGroup>
+          </Row>
+        </Container>
+        
+        
 
       </Container>
     

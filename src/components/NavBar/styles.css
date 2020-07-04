@@ -2,8 +2,7 @@
   display: flex;
   background-color: #487bd9;
   align-items: center;
-  width: 100%;
-  height: 100px;
+  
 }
 
 .navBar img{
@@ -23,14 +22,10 @@
   align-items: center;
 }
 
-.searchIcon{
-  cursor: pointer;
-}
-
 .profileIcon{
+  margin-top: 15px;
+  margin-left: 129px ;
   cursor: pointer;
-  right: 0;
-  left: 15vh;
   position: relative;
 }
 
