@@ -3,8 +3,7 @@ import { MdShoppingCart } from 'react-icons/md'
 import capitalizeLetter from './../../utils/capitalize'
 import './styles.css';
 import {
-  Card, Container, ButtonGroup, Row, Col, CardGroup, CardBody,
-  CardTitle, CardSubtitle, Button
+  Card, Container, ButtonGroup, Row, Button
 } from 'react-bootstrap';
 
 export default function Cart({ onCartClick, cartItems, totalPrice, endShop, clearCart }) {
@@ -24,13 +23,13 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop, clea
         {
           currentCartItems.map(item => {
             return (
-              <>
+              <Card className='side-card-poke'>     
               <img src={item.sprites.front_default} alt={item.name} />
               <Container className='item' key={item.id}>
-                  <p className='name'>{capitalizeLetter(item.name)}</p>
-                  <p className='price'>R$ {((item.weight + item.height + item.base_experience) / 3).toFixed(2)}</p>
+                <p>{capitalizeLetter(item.name)}</p>
+                <p>R$ {((item.weight + item.height + item.base_experience) / 3).toFixed(2)}</p>
               </Container>
-              </>
+              </Card>
             );
           })}
         <div className='total'>
@@ -53,9 +52,6 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop, clea
           </ButtonGroup>
           </Row>
         </Container>
-        
-        
-
       </Container>
     
   );
