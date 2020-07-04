@@ -1,13 +1,13 @@
-.card{
-  background-color: white;
-  border-radius: 12px;
-  max-width: 200px;
-  max-height: 200px;
-  margin: 20px;
-  text-align: center;
+.card {
+  flex: 1;
+  border-radius: 12px 12px 12px 12px;
 }
 
-.card img{
+.card_deck {
+  justify-content: center;
+}
+
+.card img {
   max-width: 80px;
   display: block;
   margin-left: auto;
@@ -15,21 +15,25 @@
 }
 
 .card p{
-  color: slategrey;
+  color: #dbb300;
+  font-weight: bold;
 }
 
 .card .price{
-  color: black;
   font-weight: 700;
 }
 
 .card button{
   padding: 16px 50px;
   margin: 0px;
-  background-color: #487bd9;;
-  border-radius: 0 0 12px 12px;
+  background-color: #487bd9;
+  border-radius: 12px 12px 12px 12px;
   border: none;
   font-weight: bold;
   color: white;
   cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #c558a1;
 }

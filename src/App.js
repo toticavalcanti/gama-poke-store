@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import ReactNotification from 'react-notifications-component';
 
-import TopBar from './components/TopBar';
+import NavBar from './components/NavBar';
 import CardsContainer from './components/CardsContainer';
 import Cart from './components/Cart';
 import Modal from './components/Modal';
 
-import 'react-notifications-component/dist/theme.css';
+import 'react-notifications-component/dist/theme.css'
 import './global.css';
-import './responsive.css';
+import './responsive.css'
 
 
 function App() {
@@ -27,13 +27,29 @@ function App() {
       setShowModalState(false)
     }, 2000);
   }
+
+  function clearCart() {
+    setCartItems([]);
+    setPriceTotal(0);
+    setShowModalState(true);
+    setTimeout(() => {
+      setShowModalState(false)
+    }, 0);
+  }
+
   function renderCart(cartItems, priceTotal) {
     if (isCartEnabled)
       return (<Cart cartItems={cartItems} totalPrice={priceTotal} endShop={endShop} />);
   }
+
+  function renderClearCart(cartItems, priceTotal) {
+    if (isCartEnabled)
+      return (<Cart cartItems={cartItems} totalPrice={priceTotal} clearCart={clearCart} />);
+  }
+
   function addPokemonToCart(currentPokemon) {
     setCartItems([...cartItems, currentPokemon]);
-    setPriceTotal(priceTotal + currentPokemon.order);
+    setPriceTotal(priceTotal + parseFloat(((currentPokemon.weight + currentPokemon.height + currentPokemon.base_experience) / 3).toFixed(2)));
   }
   function loadCards() {
     return <CardsContainer addToCart={addPokemonToCart} searchTerm={searchTerm} />
@@ -46,7 +62,7 @@ function App() {
   return (
     <>
       <ReactNotification />
-      <TopBar onCartClick={() => {
+      <NavBar onCartClick={() => {
         if (isCartEnabled === true)
           setIsCardEnabled(false)
         else
@@ -59,6 +75,10 @@ function App() {
         {renderCart(cartItems, priceTotal)}
       </div>
       {showModal()}
+      <div className='content'>
+        {loadCards()}
+        {renderClearCart(cartItems, priceTotal)}
+      </div>
     </>
   );
 }
