@@ -65,6 +65,7 @@ export default function CardsContainer({ addToCart, searchTerm }) {
               return <PokeCard pokemon={pokemon} addToCart={addItem} key={pokemon.name} />
           })}
         </Container>
+        <Row></Row>
       </Row>
   );
 

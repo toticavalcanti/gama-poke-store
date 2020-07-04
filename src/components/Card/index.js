@@ -29,7 +29,7 @@ export default function PokeCard({ pokemon, addToCart }) {
 
   return (
     <>
-    <Container fluid={true}>
+    <Container className='container' fluid={true}>
       <Row>
         <Col >   
         <Card className="mx-auto my-3">
