@@ -6,23 +6,40 @@ import { Container, Button, ButtonGroup, Row } from 'react-bootstrap';
 
 export default function CardsContainer({ addToCart, searchTerm }) {
   const [pokemonArray, setPokemonArray] = useState([]);
+  //const [loading, setLoading] = useState(false);
   const [nextUrl, setNextUrl] = useState('');
   const [prevUrl, setPrevUrl] = useState('');
+  const initialURL = `/?`;
 
   useEffect(() => {
     async function loadPokemon() {
-      const response = await apiType.get('/pokemon/');
-      setNextUrl(response.next);
-      setPrevUrl(response.previous);
+      const response = await apiType.get(initialURL);
+      console.log('Antes:', response.data.next);
+      setNextUrl(response.data.next);
+      console.log('Proximo:', nextUrl);
+      setPrevUrl(response.data.previous);
       setPokemonArray(response.data.results);
     }
     loadPokemon();
   }, [])
 
   const next = async () => {
-    let data = await apiType.get(nextUrl);
-    setNextUrl(data.next);
-    setPrevUrl(data.previous);
+    //setLoading(true);
+    let response = await apiType.get(nextUrl);
+    setPokemonArray(response.data.results);
+    setNextUrl(response.data.next);
+    setPrevUrl(response.data.previous);
+    //setLoading(false);
+  }
+
+  const prev = async () => {
+    if (!prevUrl) return;
+    //setLoading(true);
+    let response = await apiType.get(prevUrl);
+    setPokemonArray(response.data.results);
+    setNextUrl(response.data.next);
+    setPrevUrl(response.data.previous);
+    //setLoading(false);
   }
 
   function addItem(currentPokemon) {
@@ -35,15 +52,15 @@ export default function CardsContainer({ addToCart, searchTerm }) {
       <Row>
         <ButtonGroup className='btn-group' aria-label="Basic example">
           <Button variant="secondary" className='button-prev'onClick={() => {
-            //endShop()
+            prev();
           }}
           >Anteriores
           </Button>
             
           <Button variant="secondary" className='button-next'onClick={() => {
-            //clearCart()
+            next();
           }}
-          >Posteriores
+          >Próximos
           </Button>
         </ButtonGroup>
         <Container>
