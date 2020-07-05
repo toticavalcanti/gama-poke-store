@@ -13,9 +13,7 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   useEffect(() => {
     async function loadPokemon() {
       const response = await apiType.get(initialURL);
-      console.log('Antes:', response.data.next);
       setNextUrl(response.data.next);
-      console.log('Proximo:', nextUrl);
       setPrevUrl(response.data.previous);
       setPokemonArray(response.data.results);
     }
