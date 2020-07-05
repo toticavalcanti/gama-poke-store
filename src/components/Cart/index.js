@@ -27,7 +27,8 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop, clea
               <img src={item.sprites.front_default} alt={item.name} />
               <Container className='item' key={item.id}>
                 <p>{capitalizeLetter(item.name)}</p>
-                <p>R$ {((item.weight + item.height + item.base_experience) / 3).toFixed(2)}</p>
+                <p>R$ {((item.weight + item.height + item.base_experience) / 3)
+                .toFixed(2)}</p>
               </Container>
               </Card>
             );
