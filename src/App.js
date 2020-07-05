@@ -75,10 +75,6 @@ function App() {
         {renderCart(cartItems, priceTotal)}
       </div>
       {showModal()}
-      <div className='content'>
-        {loadCards()}
-        {renderClearCart(cartItems, priceTotal)}
-      </div>
     </>
   );
 }
