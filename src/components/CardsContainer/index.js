@@ -8,7 +8,7 @@ export default function CardsContainer({ addToCart, searchTerm }) {
   const [pokemonArray, setPokemonArray] = useState([]);
   const [nextUrl, setNextUrl] = useState('');
   const [prevUrl, setPrevUrl] = useState('');
-  const initialURL = `/?`;
+  const initialURL = `https://pokeapi.co/api/v2/pokemon/`;
 
   useEffect(() => {
     async function loadPokemon() {
