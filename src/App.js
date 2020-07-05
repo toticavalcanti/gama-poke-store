@@ -26,7 +26,7 @@ function App() {
     setShowModalState(true);
     setTimeout(() => {
       setShowModalState(false)
-    }, 2000);
+    }, 2500);
   }
 
   function renderCart(cartItems, priceTotal) {

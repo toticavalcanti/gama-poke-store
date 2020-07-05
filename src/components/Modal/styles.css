@@ -1,5 +1,5 @@
 .modal{
-  background-color: #487bd9;;
+  background-color: white;
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -9,3 +9,9 @@
   align-items: center;
   transition: 600ms;
 }
+
+.poke_thanks{
+  margin-right: 15%;
+  color: #487bd9;
+}
+
