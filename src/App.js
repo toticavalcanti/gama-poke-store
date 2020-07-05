@@ -12,13 +12,15 @@ import './responsive.css'
 
 
 function App() {
+  const [isClsEnabled, setIsClsEnabled] = useState(false);
   const [isCartEnabled, setIsCardEnabled] = useState(true);
   const [cartItems, setCartItems] = useState([]);
   const [priceTotal, setPriceTotal] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
   const [showModalState, setShowModalState] = useState(false);
 
-  function endShop() {
+  function endShop(clsOptionEnable){
+    setIsClsEnabled(clsOptionEnable)
     setCartItems([]);
     setPriceTotal(0);
 
@@ -28,31 +30,23 @@ function App() {
     }, 2000);
   }
 
-  function clearCart() {
-    setCartItems([]);
-    setPriceTotal(0);
-  }
-
   function renderCart(cartItems, priceTotal) {
     if (isCartEnabled)
       return (<Cart cartItems={cartItems} totalPrice={priceTotal} endShop={endShop} />);
   }
 
-  function renderClearCart(cartItems, priceTotal) {
-    if (isCartEnabled)
-      return (<Cart cartItems={cartItems} totalPrice={priceTotal} clearCart={clearCart} />);
-  }
 
   function addPokemonToCart(currentPokemon) {
     setCartItems([...cartItems, currentPokemon]);
     setPriceTotal(priceTotal + parseFloat(((currentPokemon.weight + currentPokemon.height + currentPokemon.base_experience) / 3).toFixed(2)));
   }
+  
   function loadCards() {
     return <CardsContainer addToCart={addPokemonToCart} searchTerm={searchTerm} />
   }
   function showModal() {
     if (showModalState === true)
-      return (<Modal />);
+      return (<Modal show={isClsEnabled} />);
   }
 
   return (
@@ -70,7 +64,7 @@ function App() {
         {loadCards()}
         {renderCart(cartItems, priceTotal)}
       </div>
-      {showModal()}
+      {showModal(isClsEnabled)}
     </>
   );
 }

@@ -40,13 +40,13 @@ export default function Cart({ onCartClick, cartItems, totalPrice, endShop, clea
           <Row>
           <ButtonGroup className='btn-group'>
             <Button variant="secondary" className='button-end'onClick={() => {
-              endShop()
+              endShop(false)
             }}
             >Finalizar Compra
             </Button>
               
             <Button variant="secondary" className='button-clear'onClick={() => {
-              clearCart()
+              endShop(true)
             }}
             >Esvaziar Carrinho
             </Button>
