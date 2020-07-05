@@ -64,7 +64,20 @@ export default function CardsContainer({ addToCart, searchTerm }) {
               return <PokeCard pokemon={pokemon} addToCart={addItem} key={pokemon.name} />
           })}
         </Container>
-        <Row></Row>
+        <ButtonGroup className='btn-group' aria-label="Basic example">
+          <Button variant="secondary" className='button-prev'onClick={() => {
+            prev();
+          }}
+          >Anteriores
+          </Button>
+            
+          <Button variant="secondary" className='button-next'onClick={() => {
+            next();
+          }}
+          >Próximos
+          </Button>
+        </ButtonGroup>
+        
       </Row>
   );
 
